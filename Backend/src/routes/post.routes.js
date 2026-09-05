@@ -8,6 +8,7 @@ const {identifyUser} = require("../middlewares/auth.middleware.js");
 postRouter.post("/", identifyUser, upload.single("image"), createPost.createPostController);
 postRouter.get("/", identifyUser,createPost.getPostsController);
 postRouter.get("/details/:postId", identifyUser, createPost.getPostDetailsController);
+postRouter.post("/like/:postId", identifyUser, createPost.likePostController);
 
 module.exports = postRouter;
 
